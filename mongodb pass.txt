@@ -1,5 +1,0 @@
-username: pikaop125
-password: ClusterNext
-
-
-connection string: mongodb+srv://pikaop125:ClusterNext@cluster0.ytme9ti.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
