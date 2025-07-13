@@ -18,8 +18,6 @@ export async function GET() {
     data = await Product.find();
     console.log("Connection established");
 
-
-    
     return NextResponse.json({ data: data });
   } catch (error) {
     console.log("Connection Failed");
@@ -29,14 +27,13 @@ export async function GET() {
 
 // POST Method:
 export async function POST(req) {
-  let payload = await req.json();
-  await mongoose.connect(connString);
-  if ((payload = {})) {
-    return NextResponse.json({ success: false }, { status: 400 });
-  } else {
+  try {
+    let payload = await req.json();
+    await mongoose.connect(connString);
     let product = new Product(payload);
-
     await product.save();
     return NextResponse.json({ success: true }, { status: 200 });
+  } catch (err) {
+    return NextResponse.json({ success: false, error: err }, { status: 400 });
   }
 }

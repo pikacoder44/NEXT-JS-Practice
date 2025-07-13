@@ -16,15 +16,27 @@ export async function PUT(request, content) {
   return NextResponse.json({ result, success: true });
 }
 
-export async function GET(request, content) {
-  
+export async function GET(request,content) {
   const productId = await content.params.productid;
 
   const id = { _id: productId };
- 
+
   // Conect MongoDB:
   await mongoose.connect(connString);
   const result = await Product.findById(id);
 
   return NextResponse.json({ result, success: true });
+}
+
+export async function DELETE(request,content) {
+  const productId = await content.params.productid;
+  const id = { _id: productId };
+  // Conect MongoDB:
+  try {
+    await mongoose.connect(connString);
+    const result = await Product.findByIdAndDelete(id);
+    return NextResponse.json({ result, success: true });
+  } catch (err) {
+    return NextResponse.json({ error: err, success: false });
+  }
 }
