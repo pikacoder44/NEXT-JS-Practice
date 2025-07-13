@@ -17,6 +17,9 @@ export async function GET() {
     await mongoose.connect(connString);
     data = await Product.find();
     console.log("Connection established");
+
+
+    
     return NextResponse.json({ data: data });
   } catch (error) {
     console.log("Connection Failed");
