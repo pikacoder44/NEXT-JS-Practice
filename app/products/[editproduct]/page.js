@@ -38,22 +38,23 @@ const Page = ({ params }) => {
   };
 
   // Update Product Data:
-  const updateProduct = async()=>{
-    let result = await fetch(`http://localhost:3000/api/products/${productId}`, {
-      method: "PUT",
-      body: JSON.stringify({ name,price,company,color,category }),
-    });
+  const updateProduct = async () => {
+    let result = await fetch(
+      `http://localhost:3000/api/products/${productId}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({ name, price, company, color, category }),
+      }
+    );
     result = await result.json();
     console.log(result);
-  
-    if(result.success==true){
-      alert("Product Updated Successfully")
-    }else{
-      alert("Invalid parameters")
+
+    if (result.success == true) {
+      alert("Product Updated Successfully");
+    } else {
+      alert("Invalid parameters");
     }
-
-  }
-
+  };
 
   const clearInput = async () => {
     setName("");
@@ -65,7 +66,7 @@ const Page = ({ params }) => {
 
   return (
     <div className=" flex justify-center items-center flex-col  ">
-      <h1 className="text-7xl  mb-2 text-blue-700 font-bold  hover:text-blue-800 hover:cursor-default">
+      <h1 className="text-7xl  mb-2 text-secondary font-bold  hover:text-secondary hover:cursor-default">
         Edit Product
       </h1>
       <div className=" flex flex-col ">
@@ -124,7 +125,7 @@ const Page = ({ params }) => {
             <Link href={"/products"}>
               <button
                 onClick={updateProduct}
-                className="bg-blue-700 p-2 mt-5 mb-5 rounded-md hover:cursor-pointer hover:bg-blue-900  "
+                className="bg-secondary p-2 mt-5 mb-5 rounded-md hover:cursor-pointer hover:bg-orange-500 hover:text-black  "
               >
                 Submit
               </button>

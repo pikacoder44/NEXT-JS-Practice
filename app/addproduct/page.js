@@ -42,7 +42,7 @@ const Page = () => {
   };
   return (
     <div className=" flex justify-center items-center flex-col  ">
-      <h1 className="text-7xl  mb-2 text-blue-700 font-bold  hover:text-blue-800 hover:cursor-default">
+      <h1 className="text-7xl  mb-2 text-secondary font-bold  hover:text-blue-800 hover:cursor-default">
         Add Products
       </h1>
       <div className=" flex flex-col ">
@@ -101,7 +101,7 @@ const Page = () => {
             <Link href={"/products"}>
             <button
               onClick={addProduct}
-              className="bg-blue-700 p-2 mt-5 mb-5 rounded-md hover:cursor-pointer hover:bg-blue-900  "
+              className="bg-secondary p-2 mt-5 mb-5 rounded-md hover:cursor-pointer hover:bg-orange-500 hover:text-black  "
               >
               Add Product
             </button>

@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-around bg-slate-800 text-white text-xs py-4">
+    <footer className="flex justify-around bg-secondary text-primary text-xs py-4">
       <div className="text-center">
         Copyright ©️ Facebook | All rights reserved
       </div>

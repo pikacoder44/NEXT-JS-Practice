@@ -31,7 +31,7 @@ const Delete = (props) => {
     <button
       href={`products/`}
       onClick={deleteProduct}
-      className="text-black  bg-red-700 hover:bg-red-600 hover:text-white font-medium rounded-lg text-sm px-5 py-2.5"
+      className="text-black cursor-pointer  bg-red-700 hover:bg-red-600 hover:text-white font-medium rounded-lg text-sm px-5 py-2.5"
     >
       Delete
     </button>
