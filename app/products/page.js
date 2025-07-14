@@ -27,6 +27,7 @@ const page = async () => {
               key={item._id}
               className="card transition-transform duration-300 ease-in-out hover:scale-105 p-6 border-solid border-5 cursor-pointer bg-fourth  relative rounded-lg shadow-sm  dark:border-fourth"
             >
+              <Image src={"/"} width={50} height={50} alt="image not found"></Image>
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-primary ">
                 {item.name}
               </h5>
@@ -59,7 +60,7 @@ const page = async () => {
         </Link>
         <Link href="/addproduct">
           <button
-            className="bg-green-700 p-2 mt-5 rounded-md hover:cursor-pointer hover:bg-green-900 "
+            className="bg-fourth text-black p-2 mt-5 rounded-md hover:cursor-pointer hover:bg-third hover:text-white "
             type="submit"
           >
             Add Product

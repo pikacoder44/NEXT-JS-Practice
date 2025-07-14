@@ -12,10 +12,10 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --color-primary: #212121;
-  --color-secondary: #E67514;
-  --color-third: #D3ECCD;
-  --color-fourth: #EAA64D;
+  --color-primary: #222831;
+  --color-secondary: #948979;
+  --color-third: #393E46;
+  --color-fourth: #DFD0B8;
 }
 
 @media (prefers-color-scheme: dark) {

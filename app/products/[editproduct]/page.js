@@ -125,7 +125,7 @@ const Page = ({ params }) => {
             <Link href={"/products"}>
               <button
                 onClick={updateProduct}
-                className="bg-secondary p-2 mt-5 mb-5 rounded-md hover:cursor-pointer hover:bg-orange-500 hover:text-black  "
+                className="bg-secondary p-2 mt-5 mb-5 rounded-md hover:cursor-pointer hover:bg-third hover:text-white  "
               >
                 Submit
               </button>

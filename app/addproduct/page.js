@@ -80,11 +80,28 @@ const Page = () => {
         </div>
         <div className=" flex flex-col items-center justify-center ">
           <input
-            className="m-6 p-2 text-center  content-center block  "
+            className="m-6 p-2 text-center  content-center inline  "
             type="text"
             placeholder="Enter Category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
+          />
+          <label
+            htmlFor="file_input"
+            className="block mb-2 text-sm font-medium text-gray-200"
+          >
+            Upload file
+          </label>
+          <input
+            id="file_input"
+            type="file"
+            className="block w-full text-sm  text-gray-300 file:mr-4 file:py-2 file:px-4
+             file:rounded-lg file:border-0
+             file:text-sm file:font-semibold
+             file:bg-gray-700  file:text-white
+             hover:file:bg-orange-700
+             file:cursor-pointer
+             bg-gray-800 rounded-lg"
           />
           <div className=" flex flex-row ">
             <Link href="/products">
@@ -99,13 +116,13 @@ const Page = () => {
               Clear
             </button>
             <Link href={"/products"}>
-            <button
-              onClick={addProduct}
-              className="bg-secondary p-2 mt-5 mb-5 rounded-md hover:cursor-pointer hover:bg-orange-500 hover:text-black  "
+              <button
+                onClick={addProduct}
+                className="bg-secondary p-2 mt-5 mb-5 rounded-md hover:cursor-pointer hover:bg-third hover:text-white   "
               >
-              Add Product
-            </button>
-              </Link>
+                Add Product
+              </button>
+            </Link>
           </div>
         </div>
       </div>
