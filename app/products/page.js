@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Delete from "../component/Delete";
 
-
 async function getproducts() {
   let data = await fetch("http://localhost:3000/api/products");
   data = await data.json();
@@ -12,8 +11,6 @@ async function getproducts() {
 
 const page = async () => {
   const products = await getproducts();
-
-  
 
   return (
     <div className="flex justify-center flex-col content-center">
@@ -27,13 +24,10 @@ const page = async () => {
               key={item._id}
               className="card transition-transform duration-300 ease-in-out hover:scale-105 p-6 border-solid border-5 cursor-pointer bg-fourth  relative rounded-lg shadow-sm  dark:border-fourth"
             >
-              <Image src={"/"} width={50} height={50} alt="image not found"></Image>
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-primary ">
                 {item.name}
               </h5>
-              <h6 className="text-sm text-primary">
-                {item.company}
-              </h6>
+              <h6 className="text-sm text-primary">{item.company}</h6>
 
               <div className="mt-4 text-3xl font-bold text-primary">
                 Rs.{item.price}

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 import connString from "@/lib/db";
 import { Product } from "@/lib/model/product";
-
+import {writeFile} from "fs/promises"
 /*
 
     ------------------ MongoDB CRUD ------------------
@@ -27,6 +27,7 @@ export async function GET() {
 
 // POST Method:
 export async function POST(req) {
+
   try {
     let payload = await req.json();
     await mongoose.connect(connString);

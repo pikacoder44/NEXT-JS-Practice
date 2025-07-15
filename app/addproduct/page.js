@@ -7,6 +7,7 @@ const Page = () => {
   const [company, setCompany] = useState("");
   const [color, setColor] = useState("");
   const [category, setCategory] = useState("");
+  const [file, setFile] = useState("");
 
   const clearInput = async () => {
     setName("");
@@ -18,13 +19,14 @@ const Page = () => {
 
   // Add Function:
   const addProduct = async () => {
-    console.log(name, color, price, company, category);
+    console.log(name, color, price, company, category, file);
     const payload = {
       name: name,
       price: price,
       company: company,
       color: color,
       category: category,
+      image: file,
     };
     let result = await fetch("http://localhost:3000/api/products", {
       method: "POST",
@@ -86,23 +88,7 @@ const Page = () => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           />
-          <label
-            htmlFor="file_input"
-            className="block mb-2 text-sm font-medium text-gray-200"
-          >
-            Upload file
-          </label>
-          <input
-            id="file_input"
-            type="file"
-            className="block w-full text-sm  text-gray-300 file:mr-4 file:py-2 file:px-4
-             file:rounded-lg file:border-0
-             file:text-sm file:font-semibold
-             file:bg-gray-700  file:text-white
-             hover:file:bg-orange-700
-             file:cursor-pointer
-             bg-gray-800 rounded-lg"
-          />
+          
           <div className=" flex flex-row ">
             <Link href="/products">
               <button className=" bg-gray-700 p-3 mt-5 rounded-md hover:cursor-pointer hover:bg-black m-5">
